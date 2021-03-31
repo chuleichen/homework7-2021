@@ -1,2 +1,2 @@
-# homework7-2021
-This is homework 7 of SI539.
+# hw7-2021
+Starter Code for HW7 - JavaScript basics with Video
