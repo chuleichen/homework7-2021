@@ -1,4 +1,5 @@
 var video;
+var vol;
 
 window.addEventListener("load", function() {
 	console.log("Good job opening the window");
@@ -28,21 +29,24 @@ document.querySelector("#faster").addEventListener("click", function() {
 })
 
 document.querySelector("#skip").addEventListener("click", function() {
+	console.log("The current location is " + video.currentTime)
 	if (video.currentTime + 15 > video.duration) {
 		video.currentTime = 0
+		console.log("Restart the video.")
 	} else {
 		video.currentTime += 15;
 	}
-	console.log("The current location is " + video.currentTime);
+	console.log("The new location is " + video.currentTime);
 	video.play()
 })
 
 document.querySelector("#mute").addEventListener("click", function() {
 	if (document.querySelector("#mute").innerHTML == "Mute") {
+		vol = video.volume;
 		video.volume = 0;
 		document.querySelector("#mute").innerHTML = "Unmute";
 	} else {
-		video.volume = 1;
+		video.volume = vol;
 		document.querySelector("#mute").innerHTML = "Mute";
 	}
 })
